@@ -36,9 +36,12 @@ def cal_dif(n):
     close_two = float(query[n[1]]["4. close"])
 
     result = close_one - close_two
+    result_percent = (abs(result) / close_one) * 100
+
+    print(result_percent)
     # result = 200 - 10
 
-    if round(result, 2) > (close_one * 0.1):
+    if result_percent > 5:
         return True
     else:
         return False
